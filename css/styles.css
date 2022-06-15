@@ -264,30 +264,29 @@ ul {
 
 .modal {
   position: absolute;
-  width: 528px;
-  height: 581px;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 528px;
+  height: 581px;
   background-color: var(--main-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-close {
+  position: absolute;
   top: 8px;
   right: 8px;
-  position: absolute;
+  width: 30px;
+  height: 30px;
+  padding: 5px 4px 6px 4px;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  padding: 5px 4px 6px 4px;
 }
 
 .section {
@@ -668,12 +667,13 @@ ul {
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
 
-  transition-property: transform;
+  transition-property: transform, opacity;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.item:hover .cards-image > .cards-image-overlay {
+.link:hover .cards-image > .cards-image-overlay,
+.link:focus .cards-image > .cards-image-overlay {
   opacity: 1;
   transform: translateY(0);
 }
